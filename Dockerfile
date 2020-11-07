@@ -1,3 +1,2 @@
-FROM alpine
-COPY quickstart.sh /
-CMD ["/quickstart.sh"]
+FROM nginx
+COPY index.html .
