@@ -12,16 +12,14 @@ jobs:
       - run:
           name: Setup Google Cloud SDK
           command:
-            apt-get install -cq -y gettext
+            apt-get install -qq -y gettext
             echo $GCLOUD_SERVICE_KEY > ${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
-            gcloud auth activate-service-account --key-file-${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
-            apt-get install -y node.js
-            node -v
-            apt-get install -y npn
-            npn -v 
-            npn -g install acorn
-            acorn --silent script.js
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /var/www/web/pagina && git pull origin master;pwd"
+            gcloud auth activate-service-account --key-file=${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
+            apt-get install -y npm
+            npm -v 
+            npm -g install acorn
+            acorn --silent index.html
+            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
     docker:
       - image: google/cloud-sdk
@@ -34,10 +32,10 @@ jobs:
       - run:
           name: Setup Google Cloud SDK
           command:
-            apt-get install -cq -y gettext
+            apt-get install -qq -y gettext
             echo $GCLOUD_SERVICE_KEY > ${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
-            gcloud auth activate-service-account --key-file-${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /var/www/web/pagina && git pull origin master;pwd"
+            gcloud auth activate-service-account --key-file=${HOME}C:\Users\ASUS\Music\Sebastian\2020-2\Infraestructura\infraestructura-287821-f88010531f40.json
+            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
 
 workflows:
   version: 2.1
