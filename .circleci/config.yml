@@ -4,7 +4,7 @@ orbs:
 jobs:
   Development:
     docker:
-      - image: google/cloud-sdk
+      - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
@@ -25,7 +25,7 @@ jobs:
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
     docker:
-      - image: google/cloud-sdk
+      - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
