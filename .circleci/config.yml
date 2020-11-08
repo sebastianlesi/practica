@@ -7,6 +7,7 @@ jobs:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
       - VM_NAME: "mv-nfsdesarrollo"
+      - GOOGLE_PROJECT_ID: "Infraestructura-287821"
     steps:
       - checkout
       - run:
@@ -17,8 +18,8 @@ jobs:
             gcloud auth activate-service-account --key-file=${HOME}/infraestructura-287821-f88010531f40.json
             apt-get install -y npm
             npm -v 
-            npm -g install acorn
-            acorn --silent index.html
+            npm install -g html-inspector
+            htmlinspector index.html
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
     docker:
@@ -27,6 +28,7 @@ jobs:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
       - VM_NAME: "nfs2"
+      - GOOGLE_PROJECT_ID: "Infraestructura-287821"
     steps:
       - checkout
       - run:
