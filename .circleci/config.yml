@@ -1,8 +1,8 @@
 version: 2.1
+orbs:
+  gcp-cli: circleci/gcp-cli@2.1.0
 jobs:
   Development:
-    docker:
-      - image: google/cloud-sdk
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
@@ -22,8 +22,6 @@ jobs:
             htmlinspector /index.html
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
-    docker:
-      - image: google/cloud-sdk
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
