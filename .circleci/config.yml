@@ -1,10 +1,8 @@
 version: 2.1
-orbs:
-  gcp-cli: circleci/gcp-cli@2.1.0
 jobs:
   Development:
     docker:
-      - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
+      - image: google/cloud-sdk
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
@@ -16,16 +14,16 @@ jobs:
           name: Setup Google Cloud SDK
           command:
             apt-get install -qq -y gettext
-            echo $GCLOUD_SERVICE_KEY > ${HOME}\gcloud-service-key.json
-            gcloud auth activate-service-account --key-file=${HOME}\gcloud-service-key.json
+            echo $GCLOUD_SERVICE_KEY > ${GCLOUD_SERVICE_KEY}\gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}\gcloud-service-key.json
             apt-get install -y npm
             npm -v 
             npm install -g html-inspector
             htmlinspector /index.html
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
+            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
     docker:
-      - image: google/cloud-sdk@sha256:126a49cfa2aa6e20d561fa14999bf657bc341efeba04939bd2f612bf843d12a6
+      - image: google/cloud-sdk
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
@@ -37,9 +35,9 @@ jobs:
           name: Setup Google Cloud SDK
           command:
             apt-get install -qq -y gettext
-            echo $GCLOUD_SERVICE_KEY > ${HOME}\gcloud-service-key.json
-            gcloud auth activate-service-account --key-file=${HOME}\gcloud-service-key.json
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project $(GOOGLE_PROJECT_ID) --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
+            echo $GCLOUD_SERVICE_KEY > ${GCLOUD_SERVICE_KEY}\gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}\gcloud-service-key.json
+            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
 
 workflows:
   version: 2.1
