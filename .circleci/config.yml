@@ -15,7 +15,7 @@ jobs:
           command:
             apt-get install -qq -y gettext
             echo $GCLOUD_SERVICE_KEY > ${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
-            gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file ${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
             apt-get install -y npm
             npm -v 
             npm install -g html-inspector
@@ -36,7 +36,7 @@ jobs:
           command:
             apt-get install -qq -y gettext
             echo $GCLOUD_SERVICE_KEY > ${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
-            gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file ${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
 
 workflows:
