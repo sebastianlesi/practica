@@ -8,17 +8,7 @@ jobs:
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
       - VM_NAME: "mv-nfsdesarrollo"
       - GOOGLE_PROJECT_ID: "infraestructura-287821"
-      - GCLOUD_SERVICE_KEY: {"type": "service_account",
-  "project_id": "infraestructura-287821",
-  "private_key_id": "f88010531f40065d29728978cff6345b69321a67",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCaG5h9LpqYsOEh\n7ZVdMboBTIzDPnYTIpzFwcIFutIcP0cXTecuEI3foS+ns/7fxMgM5vJSUg0pJnLT\noqUZXqjW5DSOBVyv2LRbhtBTdprqFtnL9luuu7GXVscHWe42lcq5GG8i9bIM7m1o\nket3oGPnFdG5rr/CHVLJcJ/xIYIuP8+cSh1HsxCAtCAVt8eHbkBF9i/d0iLNoooX\nD6UIh4RV59qS2eigBI5oAksrYHY+N91zUE/C12EymmmwwMb5J/puvle/LOu8GpVI\nQl6+J70zeWBbfYOIJPK0TEmlWPyJakCalbR1Pkx+ZNAJIZjtuH1/uso4pofawYN+\nmJm2Yn2lAgMBAAECggEAFbmkMqmaQ8JTyquqrduvxDUddvzcOnBbt4lMJ/ChZDgL\ndp6V46mTxp37kOHQIY2lQiRgrvhAQLfZ4joAmmX82WaMfiUFXwjmzCxiPBHxXuTf\nyWAupqBxNcuW/VNRQMK3NIbcTAplEmueYuqHTnL/AnnR+iJHiD8IB7vn4F9/8bL3\nLPhGkL3y9v4Gj6W3knaXzb7CKyt4ZnTcrWDqJ78kgDuW3Aow3ElTM4uOwSktDg/F\nZPooQRaQm2r7HBoLUugnDSYp7NcZMIHVrwZDKs9JAZgtXgutjQw+gX67CXh3oJbV\ng9e/yy3bnEZIWi/Gb0BhgyPiYp0HGMpZPE/ti73TYQKBgQDPSN+cKY/XXdk/gi+N\nJ2faYSPgZPeOmT1cM4J8ayiObHIgm+xfJaslhqdKW4S2PddXqRDCnbOB602VadgX\nM721hWcQeJNGHMXT0CGo4FouY9JzVtczOG60odHxYN+XXU+U6VqhgVQE2kxARR4I\nUEltRlWvviETsQ2FoxAYC66JDQKBgQC+U2A1qqlXT/4bd1hCIOZxTOhCECcmV4za\ns27Ni71wrbCazXlwzdSIhvLr2CUsAMwocldYvcOmCHDO3xuvt5NHc8uDmOv/BXbj\nMc4Fxq5yOBvGMTQxbIG/OrRL52MPMNt243ykiTDxUzCRTeqN9EcdNIHZtbILgzCK\niyx2Xu/w+QKBgH61ICM4cLoIny0oKmMRjHU8Xg7kCUO8vnpm7kOZyW/OMLFoPsQm\npYjJ1+cnLGeuQ71NFnawqbMoIAPOcI42TafxRQAXhIcePXttxbWSdu3WjSV+Fwwz\nWdDG/iubuPGw013Gi2UgRji1LFk5JtOUKF5I2UYVZejAmPBwrfzU3zrdAoGAYh1n\nNqNRAxLYw14F4KlHQtdL0Gq1U/3EPiZME6hbM5BGv7b3SODDFNLEvjJCD2ol1SAE\nyVmiV6B4Tx0TD8XKJgaavq+B0YkGnd7Z/35KBdXI86X/6w6t4GAp/As/tOAR8zsY\n0VVsJqwlGHMbXKy2UGb2Hb6eF3M8/d77P9Z3STkCgYB3AwBo6pbF0QJbVLBT/oIE\nBp29WxtVYAXoCFeyZb9JqQAaZwrpwIw6J7eUWpAGRhfp6lqmj0F7xUKA8feLXSGs\ni2EcXjaN3caXr9rnghEQsRXjkKPKhJcqYnimD2YKnl4DUNxKcaeS+xE5PhakgVAH\n2z0y5+ScLZCzkHitT3jiMw==\n-----END PRIVATE KEY-----\n",
-  "client_email": "782423016750-compute@developer.gserviceaccount.com",
-  "client_id": "101185726561134921839",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/782423016750-compute%40developer.gserviceaccount.com"}
-
+      
     steps:
       - checkout
       - run:
@@ -40,16 +30,6 @@ jobs:
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
       - VM_NAME: "nfs2"
       - GOOGLE_PROJECT_ID: "infraestructura-287821"
-      - GCLOUD_SERVICE_KEY: {"type": "service_account",
-  "project_id": "infraestructura-287821",
-  "private_key_id": "f88010531f40065d29728978cff6345b69321a67",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCaG5h9LpqYsOEh\n7ZVdMboBTIzDPnYTIpzFwcIFutIcP0cXTecuEI3foS+ns/7fxMgM5vJSUg0pJnLT\noqUZXqjW5DSOBVyv2LRbhtBTdprqFtnL9luuu7GXVscHWe42lcq5GG8i9bIM7m1o\nket3oGPnFdG5rr/CHVLJcJ/xIYIuP8+cSh1HsxCAtCAVt8eHbkBF9i/d0iLNoooX\nD6UIh4RV59qS2eigBI5oAksrYHY+N91zUE/C12EymmmwwMb5J/puvle/LOu8GpVI\nQl6+J70zeWBbfYOIJPK0TEmlWPyJakCalbR1Pkx+ZNAJIZjtuH1/uso4pofawYN+\nmJm2Yn2lAgMBAAECggEAFbmkMqmaQ8JTyquqrduvxDUddvzcOnBbt4lMJ/ChZDgL\ndp6V46mTxp37kOHQIY2lQiRgrvhAQLfZ4joAmmX82WaMfiUFXwjmzCxiPBHxXuTf\nyWAupqBxNcuW/VNRQMK3NIbcTAplEmueYuqHTnL/AnnR+iJHiD8IB7vn4F9/8bL3\nLPhGkL3y9v4Gj6W3knaXzb7CKyt4ZnTcrWDqJ78kgDuW3Aow3ElTM4uOwSktDg/F\nZPooQRaQm2r7HBoLUugnDSYp7NcZMIHVrwZDKs9JAZgtXgutjQw+gX67CXh3oJbV\ng9e/yy3bnEZIWi/Gb0BhgyPiYp0HGMpZPE/ti73TYQKBgQDPSN+cKY/XXdk/gi+N\nJ2faYSPgZPeOmT1cM4J8ayiObHIgm+xfJaslhqdKW4S2PddXqRDCnbOB602VadgX\nM721hWcQeJNGHMXT0CGo4FouY9JzVtczOG60odHxYN+XXU+U6VqhgVQE2kxARR4I\nUEltRlWvviETsQ2FoxAYC66JDQKBgQC+U2A1qqlXT/4bd1hCIOZxTOhCECcmV4za\ns27Ni71wrbCazXlwzdSIhvLr2CUsAMwocldYvcOmCHDO3xuvt5NHc8uDmOv/BXbj\nMc4Fxq5yOBvGMTQxbIG/OrRL52MPMNt243ykiTDxUzCRTeqN9EcdNIHZtbILgzCK\niyx2Xu/w+QKBgH61ICM4cLoIny0oKmMRjHU8Xg7kCUO8vnpm7kOZyW/OMLFoPsQm\npYjJ1+cnLGeuQ71NFnawqbMoIAPOcI42TafxRQAXhIcePXttxbWSdu3WjSV+Fwwz\nWdDG/iubuPGw013Gi2UgRji1LFk5JtOUKF5I2UYVZejAmPBwrfzU3zrdAoGAYh1n\nNqNRAxLYw14F4KlHQtdL0Gq1U/3EPiZME6hbM5BGv7b3SODDFNLEvjJCD2ol1SAE\nyVmiV6B4Tx0TD8XKJgaavq+B0YkGnd7Z/35KBdXI86X/6w6t4GAp/As/tOAR8zsY\n0VVsJqwlGHMbXKy2UGb2Hb6eF3M8/d77P9Z3STkCgYB3AwBo6pbF0QJbVLBT/oIE\nBp29WxtVYAXoCFeyZb9JqQAaZwrpwIw6J7eUWpAGRhfp6lqmj0F7xUKA8feLXSGs\ni2EcXjaN3caXr9rnghEQsRXjkKPKhJcqYnimD2YKnl4DUNxKcaeS+xE5PhakgVAH\n2z0y5+ScLZCzkHitT3jiMw==\n-----END PRIVATE KEY-----\n",
-  "client_email": "782423016750-compute@developer.gserviceaccount.com",
-  "client_id": "101185726561134921839",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/782423016750-compute%40developer.gserviceaccount.com"}
 
     steps:
       - checkout
