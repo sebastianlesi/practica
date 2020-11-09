@@ -41,7 +41,8 @@ jobs:
 
 workflow:
   version: 2.1
-  jobs:
+  build:
+    jobs:
       - Development:
           filters:
             branches:
