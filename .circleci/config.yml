@@ -22,7 +22,7 @@ jobs:
             npm -v 
             npm install -g html-inspector
             htmlinspector ~/index.html
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
+            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd" | true
   Production:
     docker:
       - image: google/cloud-sdk
