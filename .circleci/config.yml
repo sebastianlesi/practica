@@ -6,7 +6,7 @@ jobs:
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
-      - VM_NAME: "mv-nfsdesarrollo
+      - VM_NAME: "mv-nfsdesarrollo"
       
     steps:
       - checkout
