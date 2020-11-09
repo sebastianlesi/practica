@@ -46,7 +46,8 @@ workflows:
       - Development:
         filters:
           branches:
-            only: master
+            only: 
+            - master
       - Manual-Approval:
         type: approval
         requires:
@@ -56,7 +57,8 @@ workflows:
           - Manual-Approval
         filters:
           branches:
-           only: master
+           only: 
+           - master
 
 
 
