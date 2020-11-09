@@ -40,6 +40,7 @@ jobs:
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
 
 workflows:
+  workflow:
   version: 2.1
     jobs:
       - Development:
