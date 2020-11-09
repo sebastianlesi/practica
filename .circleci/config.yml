@@ -6,8 +6,7 @@ jobs:
     environment:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
-      - VM_NAME: "mv-nfsdesarrollo"
-      - GOOGLE_PROJECT_ID: "infraestructura-287821"
+      - VM_NAME: "mv-nfsdesarrollo
       
     steps:
       - checkout
@@ -29,7 +28,6 @@ jobs:
       - PROJECT_NAME: "Infraestructura"
       - GOOGLE_COMPUTE_ZONE: "us-central1-a"
       - VM_NAME: "nfs2"
-      - GOOGLE_PROJECT_ID: "infraestructura-287821"
 
     steps:
       - checkout
