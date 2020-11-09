@@ -19,7 +19,7 @@ jobs:
             apt-get install -y npm
             npm -v 
             npm install -g html-inspector
-            htmlinspector /index.html
+            htmlinspector ~/index.html
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd"
   Production:
     docker:
@@ -41,16 +41,17 @@ jobs:
 
 workflows:
   version: 2.1
-  jobs:
-    - Development:
+  build:
+    jobs:
+      - Development:
         filters:
           branches:
             only: master
-    - Manual-Approval:
+      - Manual-Approval:
         type: approval
         requires:
           - Development
-    - Production:
+      - Production:
         requires:
           - Manual-Approval
         filters:
