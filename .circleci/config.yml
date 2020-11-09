@@ -54,6 +54,10 @@ workflows:
           branches:
             only: 
               - master
+      - Manual-Approval:
+          type: approval
+          requires:
+            - Test
       - Development:
         filters:
           branches:
