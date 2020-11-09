@@ -41,21 +41,21 @@ jobs:
 
 workflows:
   version: 2.1
-    jobs:
-      - Development:
-          filters:
-            branches:
-              only: master
-      - Manual-Approval:
-          type: approval
-          requires:
-            - Development
-      - Production:
-          requires:
-            - Manual-Approval
-          filters:
-            branches:
-              only: master
+  jobs:
+    - Development:
+         filters:
+           branches:
+             only: master
+    - Manual-Approval:
+         type: approval
+         requires:
+           - Development
+    - Production:
+         requires:
+           - Manual-Approval
+             filters:
+              branches:
+               only: master
 
 
 
