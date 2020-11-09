@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
+          npm init -y
           npm install -g html-inspector
           htmlinspector ~/index.html
   Development:
