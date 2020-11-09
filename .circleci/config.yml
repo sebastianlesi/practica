@@ -15,10 +15,8 @@ jobs:
           command: |
             apt-get install -qq -y gettext
             pwd
-            echo $GCLOUD_SERVICE_KEY
-            echo ${GCLOUD_SERVICE_KEY}
-            echo $GCLOUD_SERVICE_KEY > ${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
-            gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}/gcloud-service-key.json
+            echo $GCLOUD_SERVICE_KEY > prueba/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=prueba/gcloud-service-key.json
             apt-get install -y npm
             npm -v 
             npm install -g html-inspector
