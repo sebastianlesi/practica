@@ -1,5 +1,13 @@
 version: 2.1
 jobs:
+  Test:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          npm install -g html-inspector
+          htmlinspector ~/index.html
   Development:
     docker:
       - image: google/cloud-sdk
@@ -18,10 +26,6 @@ jobs:
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
-            apt-get install -y npm
-            npm -v 
-            npm install -g html-inspector
-            htmlinspector ~/index.html
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd" | true
   Production:
     docker:
