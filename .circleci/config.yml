@@ -49,6 +49,11 @@ workflows:
   version: 2.1
   build:
     jobs:
+      - Test:
+        filters:
+          branches:
+            only: 
+              - master
       - Development:
         filters:
           branches:
