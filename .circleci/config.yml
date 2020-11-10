@@ -24,6 +24,8 @@ jobs:
       - run:
           name: "Setup Google Cloud SDK"
           command: |
+            apt-get update -y
+            apt-get install -y apt-utils
             apt-get install -qq -y gettext
             pwd
             mkdir prueba
