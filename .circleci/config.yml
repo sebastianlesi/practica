@@ -25,6 +25,8 @@ jobs:
           name: "Setup Google Cloud SDK"
           command: |
             apt-get install -qq -y gettext
+            pwd
+            mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo ${GCLOUD_SERVICE_KEY}
