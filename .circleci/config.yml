@@ -32,8 +32,10 @@ jobs:
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             cat ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
-            echo $KEY​​​​​​ > key
+            echo $KEY​​​​​​PU > key.pub
+            echo $KEY​​​​​​PRI > key
             chmod 400 key
+            chmod 400 key.pub
             gcloud beta compute ssh $​VM_NAME​​​​​ --zone=$​​​​​GOGLE_COMPUTE_ZONE​​​ --ssh-key-file=key --command="cd /mnt/nfs_share && git pull origin master"
   Production:
     docker:
