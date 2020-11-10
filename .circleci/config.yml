@@ -29,6 +29,7 @@ jobs:
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             cat ./prueba/gcloud-service-key.json
+            cat ~/.ssh/google_compute_engine
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​ > key
             chmod 400 key
