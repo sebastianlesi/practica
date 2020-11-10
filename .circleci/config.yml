@@ -33,7 +33,7 @@ jobs:
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​ > key
             chmod 400 key
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --ssh-key-file=./key​ --command="cd /mnt/nfs_share && git pull origin master;pwd" | true
+            gcloud beta compute ssh ${​​​​​VM_NAME}​​​​​ --zone=${​​​​​GOGLE_COMPUTE_ZONE}​​​​​ --ssh-key-file=key --command="cd /mnt/nfs_share && git pull origin master"
   Production:
     docker:
       - image: google/cloud-sdk
