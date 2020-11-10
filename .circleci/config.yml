@@ -29,6 +29,7 @@ jobs:
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
+            ls
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share && git pull origin master;pwd" | true
   Production:
     docker:
