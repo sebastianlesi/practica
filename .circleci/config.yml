@@ -48,7 +48,6 @@ jobs:
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
-            ./prueba/gcloud-service-key.json
             gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd"
 
 workflows:
@@ -56,10 +55,10 @@ workflows:
   build:
     jobs:
       - Test:
-        filters:
-          branches:
-            only: 
-              - master
+          filters:
+            branches:
+              only: 
+                - master
       - Manual-Approval:
           type: approval
           requires:
