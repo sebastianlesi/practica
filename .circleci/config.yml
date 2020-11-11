@@ -21,6 +21,9 @@ jobs:
       
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "dc:58:b0:22:fb:87:f3:8f:63:1a:dd:71:3a:be:b5:6b"
       - run:
           name: "Setup Google Cloud SDK"
           command: |
@@ -36,7 +39,6 @@ jobs:
             echo $KEY​​​​​​PRI > key
             chmod 400 key
             chmod 400 key.pub
-            echo ~/.ssh/authorized_keys
             gcloud beta compute ssh $​VM_NAME​​​​​ --zone=$​​​​​GOGLE_COMPUTE_ZONE​​​ --ssh-key-file=key --command="cd /mnt/nfs_share && git pull origin master"
   Production:
     docker:
