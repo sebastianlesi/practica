@@ -37,7 +37,7 @@ jobs:
             pwd
             cat ./prueba/key.pub
             cat ./prueba/key
-            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@35.238.229.71 cd /mnt/nfs_share; git clone https://github.com/sebastianlesi/practica.git; ls
+            ssh -i ./prueba/key 782423016750-compute@35.238.229.71 cd /mnt/nfs_share && ls
   Production:
     docker:
       - image: google/cloud-sdk
