@@ -35,10 +35,11 @@ jobs:
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
             pwd
-            echo ./prueba/key.pub
-            echo ./prueba/key
-            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.122.209.52
-            cd /mnt/nfs_share && git pull origin master
+            cat ./prueba/key.pub
+            cat ./prueba/key
+            ssh -i ./prueba/key -o StrictHostKeyChecking=no 782423016750-compute@34.122.209.52
+            cd /mnt/nfs_share
+            git pull origin master
   Production:
     docker:
       - image: google/cloud-sdk
