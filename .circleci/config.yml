@@ -36,7 +36,7 @@ jobs:
             echo $KEY​​​​​​PRI > ./prueba/key
             pwd
             cat ./prueba/key.pub
-            ssh -i ./prueba/key -o StrictHostKeyChecking=no 782423016750-compute@34.122.209.52
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.122.209.52
             cd /mnt/nfs_share && git pull origin master
   Production:
     docker:
