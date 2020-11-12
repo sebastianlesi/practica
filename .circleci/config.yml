@@ -37,7 +37,9 @@ jobs:
             cd ./prueba
             chmod 600 key
             chmod 600 key.pub
+            pwd
             ssh -i ./prueba/key  782423016750-compute@34.122.209.52
+            pwd
             cd /mnt/nfs_share && git pull origin master
   Production:
     docker:
