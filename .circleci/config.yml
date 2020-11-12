@@ -39,6 +39,7 @@ jobs:
             chmod 600 key.pub
             pwd
             ssh -i ./prueba/key  782423016750-compute@34.122.209.52
+            yes
             pwd
             cd /mnt/nfs_share && git pull origin master
   Production:
