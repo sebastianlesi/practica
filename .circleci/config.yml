@@ -34,11 +34,9 @@ jobs:
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
-            cd ./prueba
-            chmod 600 key
-            chmod 600 key.pub
             pwd
-            ssh -i ./prueba/key -o StrictHostKeyChecking=no --command="cd /mnt/nfs_share && git pull origin master" 782423016750-compute@34.122.209.52
+            cat ./prueba/key
+            ssh -i ./prueba/key -o StrictHostKeyChecking=no 782423016750-compute@34.122.209.52
             cd /mnt/nfs_share && git pull origin master
   Production:
     docker:
