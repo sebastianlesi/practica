@@ -32,11 +32,11 @@ jobs:
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             cat ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
-            echo $KEY​​​​​​PU > key.pub
-            echo $KEY​​​​​​PRI > key
+            echo $KEY​​​​​​PU > ./prueba/key.pub
+            echo $KEY​​​​​​PRI > ./prueba/key
             chmod 600 key
             chmod 600 key.pub
-            gcloud beta compute ssh $​VM_NAME​​​​​ --zone=$​​​​​GOGLE_COMPUTE_ZONE​​​ --ssh-key-file=key --command="cd /mnt/nfs_share && git pull origin master"
+            ssh -i ./prueba/key  782423016750-compute@34.122.209.52
   Production:
     docker:
       - image: google/cloud-sdk
