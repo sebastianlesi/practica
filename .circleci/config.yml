@@ -34,6 +34,7 @@ jobs:
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
+            cd ./prueba
             chmod 600 key
             chmod 600 key.pub
             ssh -i ./prueba/key  782423016750-compute@34.122.209.52
