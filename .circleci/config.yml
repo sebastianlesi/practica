@@ -21,9 +21,6 @@ jobs:
       
     steps:
       - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - "dc:58:b0:22:fb:87:f3:8f:63:1a:dd:71:3a:be:b5:6b"
       - run:
           name: "Setup Google Cloud SDK"
           command: |
