@@ -77,8 +77,8 @@ workflows:
           requires:
             - Development
       - Production:
-        requires:
-          - Manual-Approval2
+          requires:
+            - Manual-Approval2
         filters:
           branches:
             only: 
