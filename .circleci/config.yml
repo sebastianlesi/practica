@@ -68,12 +68,12 @@ workflows:
           requires:
             - Test
       - Development:
+          requires:
+            - Manual-Approval
         filters:
           branches:
             only: 
               - master
-          requires:
-            - Manual-Approval
       - Production:
         filters:
           branches:
