@@ -72,6 +72,8 @@ workflows:
           branches:
             only: 
               - master
+          requires:
+            - Manual-Approval
       - Production:
         filters:
           branches:
