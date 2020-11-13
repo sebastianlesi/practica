@@ -77,12 +77,12 @@ workflows:
           requires:
             - Development
       - Production:
-          requires:
-            - Manual-Approval2
-          filters:
-            branches:
-              only: 
-                - master
+        requires:
+          - Manual-Approval2
+        filters:
+          branches:
+            only: 
+              - master
 
 
 
