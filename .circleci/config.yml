@@ -71,7 +71,7 @@ workflows:
             - Test
       - Development:
         - requires:
-          - Manual-Approval
+            - Manual-Approval
         - filters:
             branches:
               only: 
