@@ -79,10 +79,10 @@ workflows:
       - Production:
           requires:
             - Manual-Approval2
-        filters:
-          branches:
-            only: 
-              - master
+            filters:
+              branches:
+                only: 
+                  - master
 
 
 
