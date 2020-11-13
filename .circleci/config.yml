@@ -29,11 +29,10 @@ jobs:
             apt-get install -qq -y gettext
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
-            cat ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
-            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@35.238.229.71 "cd /mnt/nfs_share && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && ls"
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.66.145.211 "cd /mnt/nfs_share && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && ls"
   Production:
     docker:
       - image: google/cloud-sdk
@@ -47,12 +46,15 @@ jobs:
       - run:
           name: "Setup Google Cloud SDK"
           command: |
+            apt-get update -y
+            apt-get install -y apt-utils
             apt-get install -qq -y gettext
-            pwd
             mkdir prueba
             echo $GCLOUD_SERVICE_KEY > ./prueba/gcloud-service-key.json
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
-            gcloud --quiet beta compute ssh --zone ${GOOGLE_COMPUTE_ZONE} ${VM_NAME} --project ${GOOGLE_PROJECT_ID} --ssh-flag="-t" --command="cd /mnt/nfs_share/html/html && git pull origin master;pwd" | true
+            echo $KEY​​​​​​PU > ./prueba/key.pub
+            echo $KEY​​​​​​PRI > ./prueba/key
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.123.99.41 "cd /mnt/nfs_share/html/html && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && ls"
 
 workflows:
   version: 2.1
@@ -68,8 +70,8 @@ workflows:
           requires:
             - Test
       - Development:
-          requires:
-            - Manual-Approval
+        requires:
+          - Manual-Approval
         filters:
           branches:
             only: 
