@@ -70,9 +70,9 @@ workflows:
           requires:
             - Test
       - Development:
-        - requires:
+          requires:
             - Manual-Approval
-        - filters:
+          filters:
             branches:
               only: 
                 - master
