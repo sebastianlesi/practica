@@ -72,17 +72,13 @@ workflows:
           branches:
             only: 
               - master
-      - Manual-Approval2:
-          type: approval
-          requires:
-            - Development
       - Production:
           requires:
               - Manual-Approval2
-            filters:
-              branches:
-                only: 
-                  - master
+          filters:
+            branches:
+              only: 
+                - master
 
 
 
