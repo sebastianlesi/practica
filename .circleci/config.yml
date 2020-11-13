@@ -61,10 +61,10 @@ workflows:
   build:
     jobs:
       - Test:
-        filters:
-          branches:
-            only: 
-              - master
+          filters:
+            branches:
+              only: 
+                - master
       - Manual:
           type: approval
           requires:
@@ -74,12 +74,13 @@ workflows:
             - Manual
           filters:
             branches:
-              only: master
+              only: 
+                - master
       - Production:
-        filters:
-          branches:
-            only: 
-              - master
+          filters:
+            branches:
+              only: 
+                - master
 
 
 
