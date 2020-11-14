@@ -59,6 +59,8 @@ jobs:
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
             ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.123.99.41 "cd /mnt/nfs_share && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && sudo chmod 755 practica && ls"
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@104.198.211.61 "sudo docker restart 44e9563851d7"
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.121.240.181 "sudo docker restart d92986134433"
 
 workflows:
   version: 2.1
