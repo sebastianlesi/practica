@@ -65,13 +65,13 @@ workflows:
             branches:
               only: 
                 - master
-      - Manual:
+      - Manual-Approval:
           type: approval
           requires:
             - Test
       - Development:
           requires:
-            - Manual
+            - Manual-Approval
           filters:
             branches:
               only: 
