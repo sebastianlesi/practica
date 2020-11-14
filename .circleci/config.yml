@@ -11,7 +11,7 @@ jobs:
             apt-get install -y npm
             npm -v
             npm -g install acorn
-            acorn --silent server.js                                                                             
+            sudo acorn --silent server.js                                                                             
   Development:
     docker:
       - image: google/cloud-sdk
