@@ -70,19 +70,19 @@ workflows:
           requires:
             - Test
       - Development:
-          requires:
-            - Manual-Approval
-          filters:
-            branches:
-              only: 
-                - master
+        requires:
+          - Manual-Approval
+        filters:
+          branches:
+            only: 
+              - master
       - Production:
-          requires:
-            - Development
-          filters:
-            branches:
-              only: 
-                - master
+        requires:
+          - Development
+        filters:
+          branches:
+            only: 
+              - master
 
 
 
