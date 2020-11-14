@@ -78,8 +78,9 @@ workflows:
             only: 
               - master
       - Production:
-        requires:
-          - Development
+          requires:
+            - Development
+      - Production:
         filters:
           branches:
             only: 
