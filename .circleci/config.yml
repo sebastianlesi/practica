@@ -72,7 +72,6 @@ workflows:
       - Development:
           requires:
             - Manual-Approval
-      - Development:
         filters:
           branches:
             only: 
