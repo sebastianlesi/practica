@@ -70,8 +70,8 @@ workflows:
           requires:
             - Test
       - Development:
-        requires:
-          - Manual-Approval
+          requires:
+            - Manual-Approval
       - Development:
         filters:
           branches:
