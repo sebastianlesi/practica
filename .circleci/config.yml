@@ -2,14 +2,13 @@ version: 2.1
 jobs:
   Test:
     docker:
-      - image: ubuntu:latest
+      - image: google/cloud-sdk
     steps:
       - checkout
       - run:
           command: |
-            apt-get update
+            apt-get install -qq -y gettext
             apt-get install nodejs
-            yes
             node -v
             apt-get install -y npm
             npm -v
