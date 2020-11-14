@@ -8,7 +8,7 @@ jobs:
       - run:
           command: |
             apt-get install -qq -y gettext
-            apt-get install nodejs
+            apt-get install -y nodejs
             node -v
             apt-get install -y npm
             npm -v
