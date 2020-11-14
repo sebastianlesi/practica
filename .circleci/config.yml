@@ -32,7 +32,7 @@ jobs:
             gcloud auth activate-service-account --key-file=./prueba/gcloud-service-key.json
             echo $KEY​​​​​​PU > ./prueba/key.pub
             echo $KEY​​​​​​PRI > ./prueba/key
-            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@34.66.145.211 "cd /mnt/nfs_share && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && ls"
+            ssh -i ./prueba/key -o "StrictHostKeyChecking no" 782423016750-compute@35.224.124.45 "cd /mnt/nfs_share && sudo rm -r practica; git clone https://github.com/sebastianlesi/practica.git && ls"
   Production:
     docker:
       - image: google/cloud-sdk
