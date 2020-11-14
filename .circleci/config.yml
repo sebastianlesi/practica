@@ -76,15 +76,13 @@ workflows:
               - master
           requires:
             - Manual-Approval
-        
-      - Production:
-          requires:
-            - Development
       - Production:
         filters:
           branches:
             only: 
               - master
+          requires:
+            - Development
 
 
 
