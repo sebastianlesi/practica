@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   Test:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: ubuntu:latest
     steps:
       - checkout
       - run:
