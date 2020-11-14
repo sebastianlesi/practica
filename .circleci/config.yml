@@ -8,10 +8,10 @@ jobs:
       - run:
           command: |
             node -v
-            apt-get install -y npm
+            sudo apt-get install -y npm
             npm -v
             npm -g install acorn
-            sudo acorn --silent server.js                                                                             
+            acorn --silent server.js                                                                             
   Development:
     docker:
       - image: google/cloud-sdk
