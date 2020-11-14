@@ -2,14 +2,13 @@ version: 2.1
 jobs:
   Test:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/ubuntu:latest
     steps:
       - checkout
       - run:
           command: |
-            sudo apt-get install curl software-properties-common
-            curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
             sudo apt-get update
+            sudo apt-get install nodejs
             node -v
             sudo apt-get install -y npm
             npm -v
