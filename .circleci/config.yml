@@ -8,7 +8,7 @@ jobs:
       - run:
           command: |
             node -v
-            sudo apt-get install npm
+            sudo apt install npm
             npm -v
             npm -g install acorn
             acorn --silent server.js                                                                             
