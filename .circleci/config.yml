@@ -6,11 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
-          node -v
-          apt-get install -y npm
-          npm -v
-          npm -g install acorn
-          acorn --silent server.js | false
+          command: |
+            node -v
+            apt-get install -y npm
+            npm -v
+            npm -g install acorn
+            acorn --silent server.js                                                                             
   Development:
     docker:
       - image: google/cloud-sdk
