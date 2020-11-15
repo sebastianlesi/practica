@@ -1,33 +1,99 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-    <head>
-
+<head>
     <meta charset="UTF-8">
-
-    <title>Node js</title>
-
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
-
-
-    <script src="main.js"></script>
-
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeKldGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdejh4u" crossorigin="anonymus">
-
-    <link rel="stylesheet" type="text/css" href="main.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria</title>
 </head>
-
 <body>
+    <header>
+        <h1><a href="index.html">Pizzeria</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#presentation">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Pagina</h1>
-    <img src="https://www.colconectada.com/wp-content/uploads/2015/04/unisabana.jpg">
-    <a href="#" id="login" class="bt btn-primary"> Iniciar</a>
-
+    <section class="presentation" id="presentation">
+        <div class="presentation-video">
+            <img src="https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg">
+        </div>
+        <h2>Ver pizza hawaiana</h2>
+        <p>
+            Pizza hawaiana tradicional muy popular localmente por su sabor a la cultura colombiana precolombina
+        </p>
+    </section>
+    <section class="about" id="about">
+        <div>
+            <!--Imagen-->
+        </div>
+        <div>
+            <h2>Nuestras pizzas</h2>
+            <p>
+                Lorem, ipsum.
+            </p>
+        </div>
+        <div>
+            <!--Imagen-->
+        </div>
+        <div>
+            <h2>Nuestra historia</h2>
+            <p>
+                Lorem, ipsum dolor.
+            </p>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <h2>Nuestra carta</h2>
+        <ul>
+            <li>
+                <div>Articulo</div>
+                <div>Precio</div>
+            </li>
+            <li>
+                <div>Articulo</div>
+                <div>Precio</div>
+            </li>
+            <li>
+                <div>Articulo</div>
+                <div>Precio</div>
+            </li>
+            <li>
+                <div>Articulo</div>
+                <div>Precio</div>
+            </li>
+            <li>
+                <div>Articulo</div>
+                <div>Precio</div>
+            </li>
+        </ul>
+    </section>
+    <section class="reservation" id="reservation">
+        <h2>Formulario de reserva</h2>
+        <form action="#">
+            <label for="">Fecha</label>
+            <input type="date" name="" id="">
+            <label for="">Nombre y apellido</label>
+            <input type="text" name="" id="">
+            <label for="">Hora</label>
+            <input type="time" name="" id="">
+            <label for="">Correo electronico</label>
+            <input type="email" name="" id="">
+            <label for="">Cantidad de comenzales</label>
+            <input type="number" name="" id="">
+            <label for="">Telefono</label>
+            <input type="text" name="" id="">
+            <label for="">Comentario</label>
+            <textarea name="" id="" cols="120" rows="4"></textarea>
+            <input type="button" value="Reservar">
+        </form>
+    </section>
+    <footer>
+        <p>Pizzeria &copy;. Todos los derechos reservados</p>
+    </footer>
 </body>
-
 </html>
